@@ -2,158 +2,266 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Melvine IT Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechEdge Consulting</title>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
     }
-    .container {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      color: #111;
+      background-color: #e8f0f8;
     }
-    .text-center {
-      text-align: center;
-    }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .btn:hover {
-      background-color: #1d4ed8;
-    }
-    h1, h2, h3 {
-      margin: 0.5rem 0;
-    }
-    p {
-      margin: 0.5rem 0 1rem;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .card h3 {
-      margin-top: 0.5rem;
-    }
-    .about, .cta {
-      background-color: #eef2ff;
-      padding: 2rem;
-      border-radius: 1rem;
-      margin-top: 2rem;
-    }
-    .cta input {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
-      margin-right: 1rem;
-    }
-    .cta .form {
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #001f3f;
+      z-index: 1000;
       display: flex;
       justify-content: center;
-      margin-top: 1rem;
+      padding: 20px;
+      flex-wrap: wrap;
     }
-    @media (max-width: 600px) {
-      .cta .form {
-        flex-direction: column;
-        align-items: center;
+    nav a {
+      margin: 10px 15px;
+      text-decoration: none;
+      color: #f4f4f4;
+      font-weight: 600;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      color: #1abc9c;
+    }
+    header, section {
+      padding: 120px 20px 60px;
+      min-height: 100vh;
+    }
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 120px 20px;
+      min-height: 80vh;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 8px;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #001f3f;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .service {
+      background: linear-gradient(to bottom right, #0074D9, #001f3f);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .service h3 {
+      margin-bottom: 10px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      resize: vertical;
+    }
+    button {
+      padding: 12px;
+      background: #001f3f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0074D9;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #001f3f;
+      color: #ccc;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
       }
-      .cta input {
-        margin-bottom: 1rem;
-        width: 100%;
+      .hero p {
+        font-size: 1.1rem;
+      }
+      nav {
+        padding: 10px;
+      }
+      nav a {
+        margin: 8px 10px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .team-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Hero Section -->
-    <div class="text-center">
-      <h1>Melvine IT Consulting</h1>
-      <p>Helping startups and SMEs streamline infrastructure, automate workflows, and scale reliably with expert DevOps solutions.</p>
-      <button class="btn">Get a Free Consultation</button>
-    </div>
 
-    <!-- Services Section -->
-    <section>
-      <h2 class="text-center">Our Services</h2>
-      <div class="services">
-        <div class="card">
-          <h3>DevOps Automation</h3>
-          <p>CI/CD pipelines, infrastructure as code, container orchestration.</p>
-        </div>
-        <div class="card">
-          <h3>Cloud Strategy</h3>
-          <p>Cloud architecture, migration, and cost optimization.</p>
-        </div>
-        <div class="card">
-          <h3>Training & Mentorship</h3>
-          <p>Upskill your team in modern DevOps practices and tools.</p>
-        </div>
-        <div class="card">
-          <h3>IT Consulting</h3>
-          <p>Tailored solutions to boost productivity and agility.</p>
-        </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home" class="hero">
+    <h1>TechEdge Consulting</h1>
+    <p>Empowering businesses through innovative IT solutions and digital transformation.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="max-width: 800px; margin: 0 auto; text-align: center;">
+      At TechEdge Consulting, we specialize in delivering cutting-edge IT services that drive business success. From cloud infrastructure to DevOps and software development, we partner with companies to create scalable and secure technology solutions.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>IT Consulting</h3>
+        <p>Strategic technology advisory to align your IT with business goals.</p>
       </div>
-    </section>
+      <div class="service">
+        <h3>Cloud Solutions</h3>
+        <p>Cloud migration, optimization, and management across AWS, Azure, and GCP.</p>
+      </div>
+      <div class="service">
+        <h3>DevOps & Automation</h3>
+        <p>Improve CI/CD pipelines and automate infrastructure for faster delivery.</p>
+      </div>
+      <div class="service">
+        <h3>Custom Software Development</h3>
+        <p>Tailor-made web and mobile apps to meet your unique needs.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section class="about">
-      <h2>About Us</h2>
-      <p>We’re a DevOps-focused consulting firm founded by a certified DevOps engineer passionate about helping businesses innovate faster and more reliably. With hands-on experience and a deep understanding of cloud infrastructure, automation, and team enablement, we guide you toward operational excellence.</p>
-    </section>
+  <section id="team">
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Michael Brown" />
+        <p>Michael Brown<br><small>Lead Consultant</small></p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Angela White" />
+        <p>Angela White<br><small>Cloud Architect</small></p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="David Johnson" />
+        <p>David Johnson<br><small>DevOps Engineer</small></p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/83.jpg" alt="Tanya Green" />
+        <p>Tanya Green<br><small>Software Developer</small></p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Call to Action -->
-    <section class="cta text-center">
-      <h2>Ready to modernize your IT systems?</h2>
-      <p>Let’s talk about how we can partner with you for success.</p>
-      <form id="contactForm" class="form">
-        <input type="email" id="email" placeholder="Your email" required />
-        <button class="btn" type="submit">Contact Us</button>
-      </form>
-    </section>
-  </div>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formsubmit.co/bfrainbrain985@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-  <script>
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-
-      try {
-        const res = await fetch('http://localhost:5000/api/send', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email })
-        });
-
-        const data = await res.json();
-        alert(data.message);
-      } catch (err) {
-        alert('Error sending message');
-      }
-    });
-  </script>
+  <footer>
+    &copy; 2025 TechEdge Consulting. All rights reserved.
+  </footer>
 </body>
 </html>
 
